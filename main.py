@@ -14,12 +14,12 @@ def is_Palindrom(s1):
             #zwraca wartość true albo false
             s2 = ""
             s2 += character.lower() #zmieniamy wszystkie literki, 
-            #które są alnum na małe i dodajemy do x
             n = len(s2) #zmienna pomocnicza przechowujaca dlugosc slowa
-    for i in range(n-1):
-        if s2[i] != s2[n-1-i]: #jezeli znak po przeciwnej stronie (w tej samej kolejnosci od konca) 
-            return True; #jezeli nie napotkano problemow, zwroc truereturn(x)
-            
+            for i in range(n-1):
+                if s2[i] == s2[n-1-i]: #jezeli znak po przeciwnej stronie 
+                    #(w tej samej kolejnosci od konca) 
+                    return True; #jezeli nie napotkano problemow, 
+                    #zwroc true return(x)
 print("Program sprawdzajacy czy slowo jest palindromem")
 print("Podaj slowo")
 s1 = input() #pobieramy slowo
