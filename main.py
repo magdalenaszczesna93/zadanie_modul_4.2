@@ -8,14 +8,19 @@
 # w języku polskim, 
 # „687454786” – liczba też może być palindromem.
 
-def czyPalindrom(x):
-    x = x.lower().replace(" ", "") #zmieniamy wszystkie literki na male i pozbywamy sie spacji
-    n = len(x) #zmienna pomocnicza przechowujaca dlugosc slowa
+def is_Palindrom(s1):
+    for character in s1:
+        if character.isalnum(): #sprawdzamy czy znaki we frazie są alfanumeryczne
+            #zwraca wartość true albo false
+            s2 = ""
+            s2 += character.lower() #zmieniamy wszystkie literki, 
+            #które są alnum na małe i dodajemy do x
+            n = len(s2) #zmienna pomocnicza przechowujaca dlugosc slowa
     for i in range(n-1):
-        if x[i] != x[n-1-i]: #jezeli znak po przeciwnej stronie (w tej samej kolejnosci od konca) nie bedzie taki sam
-            return False #zwroc false
-    return True; #jezeli nie napotkano problemow, zwroc true
+        if s2[i] != s2[n-1-i]: #jezeli znak po przeciwnej stronie (w tej samej kolejnosci od konca) 
+            return True; #jezeli nie napotkano problemow, zwroc truereturn(x)
+            
 print("Program sprawdzajacy czy slowo jest palindromem")
 print("Podaj slowo")
 s1 = input() #pobieramy slowo
-print("Podane slowo " + ("jest " if(czyPalindrom(s1)) else "nie jest ") + "palindromem")
+print("Podane slowo " + ("jest " if(is_Palindrom(s1)) else "nie jest ") + "palindromem")
