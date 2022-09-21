@@ -9,9 +9,8 @@
 # „687454786” – liczba też może być palindromem.
 
 def is_palindrom(text):
-    text = text.lower()    # zamieniam na małe litery
-    text = [character for character in text if character.isalnum()]  # wybieram tylko litery i cyfry
-    # teraz jest to lista, ale to nie szkodzi    
+    text = [character for character in text.lower() if character.isalnum()]  # wybieram tylko litery i cyfry
+    # teraz jest to lista, ale to nie szkodzi i zamieniam na małe litery
     return text == text[::-1]  # sprawdzam czy text to to samo co text wspak 
     
 print("Program sprawdzajacy czy slowo jest palindromem")
